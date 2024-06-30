@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import js from "../../../public/js.webp";
-import react from "../../../public/react.webp";
+import react from "../../../public/react.png";
 import expo from "../../../public/reactExpo.svg";
 import nextjs from "../../../public/nextjs.png";
 import nodejs from "../../../public/nodejs.png";
