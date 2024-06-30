@@ -41,7 +41,7 @@ export default function NavBar() {
           className="hidden first-letter:h-8 px-4 items-center hover:bg-red-400 hover:text-neutral-800 rounded-3xl sm:block"
           href="#contact"
         >
-          Contact Me
+          Contact
         </Link>
       </div>
     </div>

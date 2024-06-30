@@ -8,9 +8,12 @@ import { Button } from "@headlessui/react";
 
 export default function Head() {
   return (
-    <div id="head" className="flex justify-center items-center p-10 md:p-24">
-      <div className="lg:w-2/3">
-        <h1 className="text-3xl lg:text-5xl font-bold mb-2">
+    <div
+      id="head"
+      className="h-screen flex justify-center items-center p-10 md:p-24"
+    >
+      <div className="lg:w-5/6 lg:ml-14">
+        <h1 className="text-3xl lg:text-5xl text-gray-800 font-bold mb-2">
           Hi, <br /> I am <span className="text-red-500">Lokesh Kanna</span>
         </h1>
         <p className="text-xl text-slate-600 mb-4">[FullStack Developer]</p>

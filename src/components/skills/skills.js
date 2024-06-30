@@ -11,6 +11,7 @@ import python from "../../../public/python.png";
 import mongoDb from "../../../public/mongo.png";
 import sql from "../../../public/sql.png";
 import firebase from "../../../public/firebase.png";
+import ethereum from "../../../public/ethereum.png";
 
 const services = [
   {
@@ -81,6 +82,11 @@ const techStacks = [
     image: sql,
     description: "",
   },
+  {
+    title: "Solidity",
+    image: ethereum,
+    description: "",
+  },
 ];
 
 export default function Skills() {
@@ -90,7 +96,7 @@ export default function Skills() {
       className="flex gap-5 justify-center items-center p-10 md:px-24 flex-wrap"
     >
       <hgroup className="flex flex-col justify-center items-center">
-        <h1 className="mt-20">Skills</h1>
+        <h1 className="mt-0 md:mt-20">Skills</h1>
         <p className="">
           Dive into my skill set for web wizardry, blending front-end finesse
           with back-end magic for seamless digital experiences!
