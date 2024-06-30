@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Poppins", "Inter", "sans-serif"],
+        cursive: ["Dancing Script", "cursive"],
       },
       colors: {
         inkBlue: "#4831d4",

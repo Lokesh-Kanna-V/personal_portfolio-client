@@ -23,7 +23,7 @@ export default function NavBar() {
         >
           Services
         </Link>
-        <h2 className="text-8xl font-serif z-40">LK</h2>
+        <h2 className="text-8xl font-cursive z-40">LK</h2>
         <Link
           className="hidden first-letter:h-8 px-4 items-center hover:bg-red-400 hover:text-neutral-800 rounded-3xl sm:block"
           href="#projects"
