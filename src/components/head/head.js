@@ -2,19 +2,13 @@ import React from "react";
 import Image from "next/image";
 
 import programmerImg from "../../../public/programmer.png";
+import headShot from "../../../public/headShot.jpeg";
 
 import { Button } from "@headlessui/react";
 
 export default function Head() {
   return (
-    <div
-      id="head"
-      className="h-screen flex justify-center items-center p-10 md:p-24 bg-inherit"
-    >
-      <div className="hidden lg:block lg:w-1/2">
-        <Image src={programmerImg} height={500} />
-      </div>
-
+    <div id="head" className="flex justify-center items-center p-10 md:p-24">
       <div className="lg:w-2/3">
         <h1 className="text-3xl lg:text-5xl font-bold mb-2">
           Hi, <br /> I am <span className="text-red-500">Lokesh Kanna</span>
@@ -45,6 +39,9 @@ export default function Head() {
             </Button>
           </a>
         </section>
+      </div>
+      <div className="hidden lg:block lg:w-1/2">
+        <Image src={headShot} height={500} />
       </div>
     </div>
   );

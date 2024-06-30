@@ -37,7 +37,7 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="h-screen flex justify-center items-center p-10 md:p-24 bg-gray-100"
+      className="h-screen flex justify-center items-center p-10 md:p-24 bg-white"
     >
       <div className="md:w-2/3">
         <h1 className="text-3xl lg:text-5xl font-bold mb-4">

@@ -85,21 +85,21 @@ const techStacks = [
 
 export default function Skills() {
   return (
-    <div
+    <section
       id="skills"
-      className="flex gap-5 justify-center items-center p-10 bg-cyan-800/50 md:px-24 flex-wrap"
+      className="flex gap-5 justify-center items-center p-10 md:px-24 flex-wrap"
     >
-      <section className="flex flex-col justify-center items-center">
-        <h1 className="text-slate-100 mt-20">Skills</h1>
-        <p>
+      <hgroup className="flex flex-col justify-center items-center">
+        <h1 className="mt-20">Skills</h1>
+        <p className="">
           Dive into my skill set for web wizardry, blending front-end finesse
           with back-end magic for seamless digital experiences!
         </p>
-      </section>
+      </hgroup>
       <section className="flex gap-2 justify-center items-center p-10 md:p-24 flex-wrap md:gap-5">
         {techStacks.map((techStack) => {
           return (
-            <div className="w-max rounded shadow-lg bg-white sm:w-fit">
+            <div className="w-max border-2 border-red-200 rounded-xl sm:w-fit">
               <div className="px-2 py-2 md:px-6 md:py-4">
                 <div className="flex flex-col items-center sm:flex-row">
                   <Image src={techStack.image} height={40} />
@@ -113,6 +113,6 @@ export default function Skills() {
           );
         })}
       </section>
-    </div>
+    </section>
   );
 }

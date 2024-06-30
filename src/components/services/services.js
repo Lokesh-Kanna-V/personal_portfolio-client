@@ -28,13 +28,13 @@ const services = [
 
 export default function Services() {
   return (
-    <div
+    <section
       id="services"
-      className="w-screen flex gap-5 flex-col justify-around items-center p-10 bg-inherit md:py-24 flex-wrap"
+      className="w-screen bg-gray-100 flex gap-5 flex-col justify-around items-center p-10 bg-inherit md:py-24 flex-wrap "
     >
-      <section>
+      <hgroup>
         <h1>Services</h1>
-      </section>
+      </hgroup>
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {services.map((service, index) => (
           <div
@@ -53,6 +53,6 @@ export default function Services() {
           </div>
         ))}
       </section>
-    </div>
+    </section>
   );
 }
