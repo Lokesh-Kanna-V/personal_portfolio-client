@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Image from "next/image";
 
 import programmerImg from "../../../public/programmer.png";
 
 import { useForm } from "react-hook-form";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import {
   Field,
@@ -18,8 +20,26 @@ import {
   Button,
 } from "@headlessui/react";
 
+const subHeadingVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { delay: 0.5 } },
+};
+
+const formVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3, delay: 1 } },
+};
+
 export default function Contact() {
   let [err, setErr] = useState();
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
   const {
     register,
@@ -40,10 +60,19 @@ export default function Contact() {
       className="h-screen flex justify-center items-center p-10 md:p-24 bg-white"
     >
       <div className="md:w-2/3">
-        <h1 className="text-3xl lg:text-5xl text-gray-800 font-bold mb-4">
+        <motion.h1
+          ref={ref}
+          variants={subHeadingVariants}
+          initial="hidden"
+          animate={controls}
+          className="text-3xl lg:text-5xl text-gray-800 font-bold mb-4"
+        >
           Get in touch with <span className="text-red-500">me.</span>
-        </h1>
-        <form
+        </motion.h1>
+        <motion.form
+          variants={formVariants}
+          initial="hidden"
+          animate={controls}
           onSubmit={handleSubmit(onSubmit)}
           className="border-2 p-6 rounded-3xl border-slate-500/75"
         >
@@ -118,7 +147,7 @@ export default function Contact() {
           >
             Submit
           </Button>
-        </form>
+        </motion.form>
       </div>
 
       {/* <div className="hidden lg:block lg:w-1/2">

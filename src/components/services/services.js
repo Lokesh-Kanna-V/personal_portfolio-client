@@ -1,9 +1,32 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
 
 import webDev from "../../../public/webDev.jpg";
 import mobileDev from "../../../public/mobileDev.jpg";
 import apiDev from "../../../public/api.jpg";
+
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const subHeadingVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { delay: 0.5 } },
+};
+
+const parentVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2, // Adjust this value to control the delay between items
+    },
+  },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, x: "50%" },
+  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+};
 
 const services = [
   {
@@ -27,17 +50,41 @@ const services = [
 ];
 
 export default function Services() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <section
       id="services"
       className="w-screen bg-gray-100 flex gap-5 flex-col justify-around items-center p-10 bg-inherit md:py-24 flex-wrap "
     >
       <hgroup>
-        <h1>Services</h1>
+        <h1
+          ref={ref}
+          variants={subHeadingVariants}
+          initial="hidden"
+          animate={controls}
+        >
+          Services
+        </h1>
       </hgroup>
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <motion.section
+        variants={parentVariant}
+        initial="hidden"
+        animate={controls}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+      >
         {services.map((service, index) => (
-          <div
+          <motion.div
+            variants={cardVariant}
+            // initial="hidden"
+            // animate={controls}
             key={index}
             className="max-w-xs rounded overflow-hidden shadow-lg bg-cyan-800/50"
           >
@@ -50,9 +97,9 @@ export default function Services() {
                 {service.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </section>
+      </motion.section>
     </section>
   );
 }
