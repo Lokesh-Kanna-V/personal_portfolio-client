@@ -12,6 +12,10 @@ export default function Head() {
       id="head"
       className="h-screen flex justify-center items-center p-10 md:p-24"
     >
+      <div className="hidden lg:block lg:w-1/2">
+        <Image src={headShot} height={500} />
+      </div>
+
       <div className="lg:w-5/6 lg:ml-14">
         <h1 className="text-3xl lg:text-5xl text-gray-800 font-bold mb-2">
           Hi, <br /> I am <span className="text-red-500">Lokesh Kanna</span>
@@ -42,9 +46,6 @@ export default function Head() {
             </Button>
           </a>
         </section>
-      </div>
-      <div className="hidden lg:block lg:w-1/2">
-        <Image src={headShot} height={500} />
       </div>
     </div>
   );
