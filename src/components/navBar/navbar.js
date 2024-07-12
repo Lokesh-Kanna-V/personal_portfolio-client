@@ -21,7 +21,7 @@ export default function NavBar() {
   }, [controls, inView]);
 
   return (
-    <div className="w-full flex justify-center fixed md:mt-5">
+    <div className="z-50 w-full flex justify-center fixed md:mt-5">
       <div className="w-full px-4 h-20 flex justify-center items-center backdrop-blur-sm bg-gray-500/50 sm:justify-between md:h-10  md:m-2 md:rounded-3xl lg:w-4/5">
         <Link
           className="hidden first-letter:h-8 px-4 items-center hover:bg-red-400 hover:text-neutral-800 rounded-3xl sm:block"

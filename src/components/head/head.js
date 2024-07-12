@@ -69,15 +69,20 @@ export default function Head() {
     <div
       id="head"
       ref={ref}
-      className="h-screen flex justify-center items-center p-10 md:p-24"
+      className="h-screen flex flex-col justify-center items-center mt-14 p-10 md:p-24 lg:flex-row"
     >
       <motion.div
         variants={imageVariants}
         initial="hidden"
         animate={controls}
-        className="hidden lg:block lg:w-1/2"
+        className="lg:block lg:w-1/2"
       >
-        <Image src={headShot} height={500} alt="Image of Lokesh Kanna" />
+        <Image
+          src={headShot}
+          height={500}
+          alt="Image of Lokesh Kanna"
+          className="w-32 h-32 rounded-full object-cover md:w-36 md:h-36 lg:w-full lg:h-full lg:rounded-none"
+        />
       </motion.div>
 
       <div className="lg:w-5/6 lg:ml-14">

@@ -116,7 +116,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="flex gap-5 justify-center items-center p-10 md:px-24 flex-wrap"
+      className="flex gap-5 justify-center items-center p-10 md:px-24 flex-wrap bg-slate-200"
     >
       <hgroup className="flex flex-col justify-center items-center">
         <motion.h1
