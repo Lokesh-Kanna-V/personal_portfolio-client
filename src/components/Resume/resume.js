@@ -30,9 +30,15 @@ export default function Resume() {
 
           {/* Vertical Divider - Start */}
           <div class="mx-4 my-0 flex items-center">
-            <div class="border-l border-gray-300 h-32"></div>
+            <div class="hidden md:block md:border-l md:border-gray-300 md:h-32"></div>
           </div>
           {/* Vertical Divider - End */}
+
+          {/* Horizontal Divider - Start */}
+          <div class="mt-0 mb-4">
+            <hr class="border-t border-gray-300 md:hidden" />
+          </div>
+          {/* Horizontal Divider - End */}
 
           <div id="headerDiv-socials" className="flex flex-col space-y-4">
             <div className="flex items-center space-x-2">
